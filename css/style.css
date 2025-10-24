@@ -1092,3 +1092,49 @@ img {
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
 }
+
+/* ===========================
+   GoDaddy Chat Widget Styling
+   =========================== */
+/* Style the GoDaddy chat button to match emerald theme */
+#godaddy-chat-widget,
+[id*="chat-widget"],
+[class*="chat-button"],
+.gd-chat-button {
+    position: fixed !important;
+    bottom: 100px !important;
+    right: 30px !important;
+    z-index: 998 !important;
+}
+
+/* Customize chat button appearance */
+#godaddy-chat-widget button,
+[id*="chat-widget"] button,
+.gd-chat-button button {
+    background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%) !important;
+    box-shadow: 0 4px 20px rgba(80,200,120,0.5) !important;
+    border: 2px solid var(--emerald) !important;
+    transition: var(--transition) !important;
+}
+
+#godaddy-chat-widget button:hover,
+[id*="chat-widget"] button:hover,
+.gd-chat-button button:hover {
+    background: linear-gradient(135deg, var(--emerald-light) 0%, var(--emerald) 100%) !important;
+    box-shadow: 0 6px 25px rgba(80,200,120,0.7) !important;
+    transform: scale(1.05) !important;
+}
+
+/* Chat window styling */
+[id*="chat-window"],
+.gd-chat-window {
+    border: 2px solid var(--emerald) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important;
+}
+
+/* Chat header customization */
+[id*="chat-header"],
+.gd-chat-header {
+    background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%) !important;
+    color: var(--pure-black) !important;
+}
