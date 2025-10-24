@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Minimalist Leaping Horse Icon -->
+  <g stroke="#00A86B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Simplified horse silhouette in leap -->
+    <path d="M 85 55 Q 88 48 92 45 L 98 43 Q 102 43 105 45 L 107 48 Q 108 52 107 56" fill="none"/>
+    
+    <!-- Body curve -->
+    <path d="M 85 55 Q 78 50 70 48 Q 62 47 55 50 L 48 55 Q 43 62 42 70 L 43 78 Q 45 85 50 90" fill="none"/>
+    
+    <!-- Front legs (extended in leap) -->
+    <path d="M 70 48 L 68 65 L 70 75" stroke-width="2"/>
+    <path d="M 62 48 L 61 62 L 63 72" stroke-width="2"/>
+    
+    <!-- Back legs (pushing off) -->
+    <path d="M 42 70 L 37 80 L 33 88" stroke-width="2"/>
+    <path d="M 43 75 L 38 86 L 35 95" stroke-width="2"/>
+    
+    <!-- Flowing tail -->
+    <path d="M 50 90 Q 45 96 40 105 Q 36 112 33 118" stroke-width="2"/>
+    
+    <!-- Mane -->
+    <path d="M 92 45 Q 94 40 96 37 M 96 44 Q 98 39 100 36" stroke-width="1.5"/>
+    
+    <!-- Eye -->
+    <circle cx="102" cy="50" r="1.5" fill="#00A86B"/>
+  </g>
+</svg>
