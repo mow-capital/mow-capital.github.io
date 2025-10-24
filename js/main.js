@@ -276,3 +276,40 @@ window.addEventListener('load', () => {
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
+
+// ===========================
+// Enhanced Horse Animation
+// ===========================
+function createEmeraldAccents() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section, index) => {
+        if (index % 2 === 0) {
+            for (let i = 0; i < 3; i++) {
+                const accent = document.createElement('div');
+                accent.className = 'emerald-accent';
+                accent.style.top = `${Math.random() * 100}%`;
+                accent.style.left = `${Math.random() * 100}%`;
+                accent.style.animationDelay = `${Math.random() * 3}s`;
+                section.appendChild(accent);
+            }
+        }
+    });
+}
+
+// Create accents on load
+window.addEventListener('load', () => {
+    createEmeraldAccents();
+});
+
+// Add premium glow effects to cards
+const cards = document.querySelectorAll('.service-card, .portfolio-item');
+cards.forEach(card => {
+    card.addEventListener('mouseenter', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        this.style.setProperty('--mouse-x', `${x}px`);
+        this.style.setProperty('--mouse-y', `${y}px`);
+    });
+});
