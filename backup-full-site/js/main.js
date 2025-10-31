@@ -192,50 +192,22 @@ if (prevBtn && nextBtn) {
 // Contact Form Handling
 // ===========================
 const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
 
-        try {
-            // Using Formspree (free email service for static sites)
-            // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-            // Get one at: https://formspree.io/
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-
-            if (response.ok) {
-                formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                formMessage.className = 'form-message success';
-                contactForm.reset();
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            // For demo purposes, show success message even without Formspree configured
-            formMessage.textContent = 'Thank you! Your message has been received. (Demo mode - configure Formspree for actual email delivery)';
-            formMessage.className = 'form-message success';
-            contactForm.reset();
-        }
-
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
+        // Construct mailto link with pre-filled data
+        const mailtoLink = `mailto:hello@mowcaps.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
     });
 }
 

@@ -313,3 +313,132 @@ cards.forEach(card => {
         this.style.setProperty('--mouse-y', `${y}px`);
     });
 });
+
+// ===========================
+// Deal Count Click to Scroll
+// ===========================
+const dealCountStat = document.getElementById('dealCountStat');
+if (dealCountStat) {
+    dealCountStat.addEventListener('click', () => {
+        const dealsSection = document.getElementById('deals');
+        if (dealsSection) {
+            dealsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+}
+
+// ===========================
+// Deal Modal Data
+// ===========================
+const dealData = {
+    1: {
+        title: 'Tech Acquisition Advisory',
+        category: 'Technology',
+        value: '$50M+',
+        icon: 'fa-chart-line',
+        description: 'Successfully advised a leading tech startup through a strategic acquisition process. Our comprehensive due diligence and valuation services helped secure optimal terms for our client. The transaction included technology transfer, talent retention strategies, and post-merger integration planning. We facilitated negotiations between multiple stakeholders and ensured regulatory compliance throughout the process. The deal closed ahead of schedule with favorable conditions for all parties involved.'
+    },
+    2: {
+        title: 'Healthcare Network Merger',
+        category: 'Healthcare',
+        value: '$200M+',
+        icon: 'fa-hospital',
+        description: 'Orchestrated the merger of two regional healthcare networks, creating one of the largest integrated health systems in the region. Our team conducted extensive operational analysis, identified synergies, and developed a comprehensive integration roadmap. We navigated complex regulatory requirements and stakeholder concerns while maintaining operational continuity. The merger resulted in improved patient care capabilities, enhanced operational efficiency, and significant cost savings.'
+    },
+    3: {
+        title: 'Real Estate Portfolio Sale',
+        category: 'Real Estate',
+        value: '$150M+',
+        icon: 'fa-building',
+        description: 'Advised on the strategic sale of a diverse commercial real estate portfolio spanning multiple markets. Our market analysis and valuation expertise attracted premium buyers and generated competitive bidding. We structured the transaction to optimize tax efficiency and maximize returns for stakeholders. The deal included complex lease assignments and tenant negotiations, all executed seamlessly under tight timelines.'
+    },
+    4: {
+        title: 'Manufacturing M&A',
+        category: 'Manufacturing',
+        value: '$75M+',
+        icon: 'fa-industry',
+        description: 'Guided a mid-market manufacturing company through a transformative acquisition that doubled their production capacity and market reach. We identified strategic targets, conducted thorough operational due diligence, and negotiated favorable terms. Our post-merger integration strategy ensured smooth operations and achieved projected synergies within the first year. The combined entity now leads their market segment with enhanced competitive advantages.'
+    },
+    5: {
+        title: 'Retail Chain Expansion',
+        category: 'Retail',
+        value: '$30M+',
+        icon: 'fa-store',
+        description: 'Supported a regional retail chain in securing growth capital and executing a strategic expansion plan across new markets. We developed comprehensive financial models, pitched to strategic investors, and negotiated favorable financing terms. Our market entry strategy and site selection analysis led to successful new store openings with strong performance metrics. The expansion positioned the client for continued growth and market leadership.'
+    },
+    6: {
+        title: 'SaaS Platform Valuation',
+        category: 'Technology',
+        value: '$100M+',
+        icon: 'fa-laptop-code',
+        description: 'Conducted a comprehensive valuation for a high-growth SaaS platform preparing for Series C funding. Our detailed financial analysis, market positioning study, and growth projections attracted top-tier venture capital firms. We advised on cap table optimization and deal structure to align with long-term strategic goals. The successful funding round exceeded targets and positioned the company for accelerated growth and market expansion.'
+    },
+    7: {
+        title: 'Green Energy Investment',
+        category: 'Energy',
+        value: '$250M+',
+        icon: 'fa-leaf',
+        description: 'Structured and advised on a landmark renewable energy infrastructure investment involving multiple stakeholders and complex financing arrangements. Our team navigated regulatory frameworks, secured tax incentives, and coordinated with government agencies. The project financing included a mix of equity, debt, and green bonds, optimized for returns and risk management. This transformative investment contributes to regional sustainability goals while delivering strong financial performance.'
+    },
+    8: {
+        title: 'EdTech Funding Round',
+        category: 'Education',
+        value: '$20M+',
+        icon: 'fa-graduation-cap',
+        description: 'Advised an innovative EdTech startup through their Series A funding round, connecting them with education-focused venture capital and strategic corporate investors. Our pitch strategy highlighted the platform\'s proven user growth, engagement metrics, and market differentiation. We negotiated terms that balanced growth capital needs with founder control objectives. The successful raise enabled product development acceleration and expansion into new geographic markets.'
+    }
+};
+
+// ===========================
+// Deal Card Click Handler
+// ===========================
+const dealCards = document.querySelectorAll('.deal-card');
+const dealOverlay = document.getElementById('dealOverlay');
+const dealOverlayClose = document.querySelector('.deal-overlay-close');
+
+dealCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const dealId = card.getAttribute('data-deal-id');
+        const deal = dealData[dealId];
+        
+        if (deal) {
+            // Update overlay content
+            document.getElementById('dealOverlayTitle').textContent = deal.title;
+            document.getElementById('dealOverlayCategory').textContent = deal.category;
+            document.getElementById('dealOverlayDescription').textContent = deal.description;
+            document.getElementById('dealOverlayValue').textContent = deal.value;
+            
+            // Update icon
+            const overlayIcon = document.querySelector('.deal-overlay-icon i');
+            overlayIcon.className = `fas ${deal.icon}`;
+            
+            // Show overlay
+            dealOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close overlay on close button click
+if (dealOverlayClose) {
+    dealOverlayClose.addEventListener('click', () => {
+        dealOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+}
+
+// Close overlay on background click
+dealOverlay.addEventListener('click', (e) => {
+    if (e.target === dealOverlay) {
+        dealOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close overlay on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dealOverlay.classList.contains('active')) {
+        dealOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
