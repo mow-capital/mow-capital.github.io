@@ -696,13 +696,14 @@ img {
 }
 
 /* ===========================
-   Focus Sectors Section
+   Focus Sectors Section (Focus Industries)
    =========================== */
 .focus-sectors {
     padding: 100px 0;
     background: linear-gradient(180deg, var(--dark-gray) 0%, var(--pure-black) 50%, var(--dark-gray) 100%);
     position: relative;
     overflow: hidden;
+    min-height: 500px;
 }
 
 .sectors-scroll-wrapper {
@@ -712,12 +713,15 @@ img {
 
 .sectors-grid {
     display: flex;
+    flex-direction: row;
     gap: 30px;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     padding: 20px 10px;
     scrollbar-width: thin;
     scrollbar-color: var(--emerald) var(--dark-gray);
+    width: 100%;
 }
 
 .sectors-grid::-webkit-scrollbar {
