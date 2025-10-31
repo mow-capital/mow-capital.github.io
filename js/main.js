@@ -158,37 +158,6 @@ filterBtns.forEach(btn => {
 });
 
 // ===========================
-// Testimonials Slider
-// ===========================
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-const prevBtn = document.getElementById('prevTestimonial');
-const nextBtn = document.getElementById('nextTestimonial');
-let currentTestimonial = 0;
-
-function showTestimonial(index) {
-    testimonialCards.forEach(card => card.classList.remove('active'));
-    testimonialCards[index].classList.add('active');
-}
-
-if (prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', () => {
-        currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
-        showTestimonial(currentTestimonial);
-    });
-
-    nextBtn.addEventListener('click', () => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-        showTestimonial(currentTestimonial);
-    });
-
-    // Auto-rotate testimonials every 5 seconds
-    setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
-        showTestimonial(currentTestimonial);
-    }, 5000);
-}
-
-// ===========================
 // Contact Form Handling
 // ===========================
 const contactForm = document.getElementById('contactForm');
