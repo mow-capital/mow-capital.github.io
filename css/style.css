@@ -696,6 +696,248 @@ img {
 }
 
 /* ===========================
+   Focus Sectors Section
+   =========================== */
+.focus-sectors {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--dark-gray) 0%, var(--pure-black) 50%, var(--dark-gray) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.sectors-scroll-wrapper {
+    position: relative;
+    margin-top: 50px;
+}
+
+.sectors-grid {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--emerald) var(--dark-gray);
+}
+
+.sectors-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.sectors-grid::-webkit-scrollbar-track {
+    background: var(--dark-gray);
+    border-radius: 10px;
+}
+
+.sectors-grid::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+    border-radius: 10px;
+}
+
+.sectors-grid::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, var(--emerald-light) 0%, var(--emerald) 100%);
+}
+
+.sector-card {
+    min-width: 320px;
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid rgba(80,200,120,0.2);
+    transition: var(--transition);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.sector-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--emerald);
+    box-shadow: 0 15px 40px rgba(80,200,120,0.4);
+}
+
+.sector-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.sector-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--medium-gray) 0%, var(--light-gray) 100%);
+    transition: var(--transition);
+}
+
+.sector-card:hover .sector-placeholder {
+    background: linear-gradient(135deg, var(--emerald-dark) 0%, var(--emerald) 100%);
+    transform: scale(1.1);
+}
+
+.sector-placeholder i {
+    font-size: 4rem;
+    color: var(--emerald);
+    text-shadow: 0 0 20px rgba(80,200,120,0.5);
+}
+
+.sector-card:hover .sector-placeholder i {
+    color: var(--pure-black);
+    text-shadow: none;
+}
+
+.sector-info {
+    padding: 25px;
+}
+
+.sector-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.sector-subtitle {
+    color: var(--emerald);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.sector-teaser {
+    color: var(--lighter-gray);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ===========================
+   Sector Modal
+   =========================== */
+.sector-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+}
+
+.sector-modal.active {
+    display: flex;
+}
+
+.sector-modal-content {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    border: 2px solid var(--emerald);
+    box-shadow: 0 20px 60px rgba(80,200,120,0.4);
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+.sector-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+    color: var(--pure-black);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sector-modal-close:hover {
+    background: linear-gradient(135deg, var(--emerald-light) 0%, var(--emerald) 100%);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.sector-modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(80,200,120,0.3);
+}
+
+.sector-modal-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(80,200,120,0.5);
+}
+
+.sector-modal-icon i {
+    font-size: 3rem;
+    color: var(--pure-black);
+}
+
+.sector-modal-header h3 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.sector-modal-subtitle {
+    color: var(--emerald);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sector-modal-body {
+    color: var(--white);
+}
+
+.sector-modal-article-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--emerald);
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(80,200,120,0.3);
+}
+
+.sector-modal-article {
+    line-height: 1.8;
+    color: var(--lighter-gray);
+}
+
+.sector-modal-article p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.sector-modal-article h5 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ===========================
    About Section
    =========================== */
 .about {
@@ -1512,6 +1754,10 @@ img {
         min-width: 280px;
     }
     
+    .sector-card {
+        min-width: 280px;
+    }
+    
     .scroll-btn {
         display: none;
     }
@@ -1531,6 +1777,27 @@ img {
     
     .deal-modal-icon i {
         font-size: 2.5rem;
+    }
+    
+    .sector-modal-content {
+        padding: 30px 20px;
+    }
+    
+    .sector-modal-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .sector-modal-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .sector-modal-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .sector-modal-article-title {
+        font-size: 1.2rem;
     }
     
     .team-grid {

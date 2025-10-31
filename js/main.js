@@ -131,31 +131,29 @@ if (statsSection) {
 }
 
 // ===========================
-// Portfolio Filter
+// Focus Sectors Horizontal Scroll Navigation
 // ===========================
-const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
+const sectorsGrid = document.getElementById('sectorsGrid');
+const sectorsScrollLeftBtn = document.getElementById('sectorsScrollLeft');
+const sectorsScrollRightBtn = document.getElementById('sectorsScrollRight');
 
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterBtns.forEach(b => b.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
+if (sectorsScrollLeftBtn && sectorsScrollRightBtn && sectorsGrid) {
+    const scrollAmount = 350;
 
-        const filterValue = btn.getAttribute('data-filter');
-
-        portfolioItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                item.style.display = 'block';
-                // Re-trigger AOS animation
-                item.classList.add('aos-animate');
-            } else {
-                item.style.display = 'none';
-            }
+    sectorsScrollLeftBtn.addEventListener('click', () => {
+        sectorsGrid.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
         });
     });
-});
+
+    sectorsScrollRightBtn.addEventListener('click', () => {
+        sectorsGrid.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // ===========================
 // Contact Form Handling
@@ -404,6 +402,206 @@ dealModal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && dealModal.classList.contains('active')) {
         dealModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ===========================
+// Sector Modal Functionality
+// ===========================
+const sectorModal = document.getElementById('sectorModal');
+const closeSectorModalBtn = document.getElementById('closeSectorModal');
+const sectorCards = document.querySelectorAll('.sector-card');
+
+// Sector data with thought leadership articles
+const sectorData = {
+    1: {
+        title: 'Financial Services',
+        subtitle: 'Banking & Capital Markets',
+        icon: 'fa-university',
+        articleTitle: 'The Digital Transformation of Financial Services',
+        article: `
+            <p>The financial services industry is undergoing its most profound transformation in decades. Digital technologies are not just improving existing processes—they're fundamentally reshaping how financial institutions operate, compete, and create value for customers.</p>
+            
+            <h5>The Imperative for Change</h5>
+            <p>Traditional banks face unprecedented pressure from fintech disruptors, changing customer expectations, and evolving regulatory landscapes. The COVID-19 pandemic accelerated digital adoption by an estimated five years, making digital transformation no longer optional but essential for survival.</p>
+            
+            <h5>Key Strategic Priorities</h5>
+            <p>Leading financial institutions are focusing on three critical areas: modernizing core banking systems to enable real-time processing and enhanced customer experiences; implementing advanced analytics and AI to improve risk management and personalize services; and building open banking platforms that foster ecosystem partnerships and innovation.</p>
+            
+            <h5>The Path Forward</h5>
+            <p>Success requires more than technology investments. It demands a fundamental shift in organizational culture, talent acquisition strategies, and operating models. Financial institutions that embrace this transformation holistically—combining technology with business model innovation—will emerge as the leaders of tomorrow's financial services landscape.</p>
+        `
+    },
+    2: {
+        title: 'Technology & Software',
+        subtitle: 'Innovation & Digital',
+        icon: 'fa-microchip',
+        articleTitle: 'Enterprise Software: Navigating the Cloud-Native Era',
+        article: `
+            <p>The enterprise software landscape has entered a new era defined by cloud-native architectures, AI-driven capabilities, and platform-based business models. Companies that understand and adapt to these shifts will capture disproportionate value in the coming decade.</p>
+            
+            <h5>The Cloud-Native Imperative</h5>
+            <p>Moving beyond simple cloud migration, true cloud-native development leverages microservices, containers, and serverless computing to achieve unprecedented scalability, resilience, and velocity. Organizations embracing these architectures are seeing 40-60% reductions in infrastructure costs while dramatically improving time-to-market for new features.</p>
+            
+            <h5>AI as a Core Differentiator</h5>
+            <p>Artificial intelligence is no longer a feature—it's becoming the foundation of competitive advantage. From intelligent automation to predictive analytics and natural language interfaces, AI capabilities are being embedded at every layer of the software stack. Companies that treat AI as a strategic imperative rather than a tactical addition are pulling away from the competition.</p>
+            
+            <h5>Platform Economics</h5>
+            <p>The most successful software companies are evolving from products to platforms, creating ecosystems that multiply value through network effects. This transition requires rethinking pricing models, developer relations, and go-to-market strategies—but the rewards are substantial, with platform businesses achieving valuations 2-3x higher than traditional software vendors.</p>
+        `
+    },
+    3: {
+        title: 'Healthcare & Life Sciences',
+        subtitle: 'Medical & Biotech',
+        icon: 'fa-heartbeat',
+        articleTitle: 'Healthcare Innovation: From Digital Health to Precision Medicine',
+        article: `
+            <p>Healthcare stands at the intersection of multiple technological revolutions—digital health, genomics, artificial intelligence, and advanced therapeutics. These convergent trends are creating unprecedented opportunities to improve patient outcomes while addressing the industry's persistent cost and access challenges.</p>
+            
+            <h5>The Digital Health Revolution</h5>
+            <p>Telemedicine adoption surged during the pandemic and has permanently altered healthcare delivery models. Remote patient monitoring, virtual care platforms, and digital therapeutics are shifting care from episodic and reactive to continuous and proactive. Healthcare organizations investing in integrated digital strategies are seeing 25-30% improvements in patient engagement and outcomes.</p>
+            
+            <h5>Precision Medicine Comes of Age</h5>
+            <p>The convergence of genomics, proteomics, and advanced analytics is enabling truly personalized medicine. Targeted therapies based on individual genetic profiles are achieving remarkable results in oncology and rare diseases. As sequencing costs continue to plummet and our understanding of the genome deepens, precision medicine will expand from specialized applications to mainstream care.</p>
+            
+            <h5>Strategic Imperatives</h5>
+            <p>Healthcare organizations must balance innovation with the sector's unique challenges: complex regulations, disparate data systems, and entrenched stakeholder interests. Success requires strategic partnerships across the healthcare ecosystem, substantial investments in data infrastructure, and a relentless focus on demonstrating clinical and economic value.</p>
+        `
+    },
+    4: {
+        title: 'Energy & Sustainability',
+        subtitle: 'Renewable & Green Tech',
+        icon: 'fa-leaf',
+        articleTitle: 'The Energy Transition: Opportunities in a Decarbonizing World',
+        article: `
+            <p>The global energy transition represents the largest capital reallocation in history—an estimated $150 trillion investment over the next three decades. This transformation creates extraordinary opportunities for companies that can navigate the complex interplay of technology innovation, policy evolution, and market dynamics.</p>
+            
+            <h5>Beyond Renewables</h5>
+            <p>While solar and wind power dominate headlines, the energy transition encompasses a broader spectrum of innovations: advanced energy storage systems enabling grid-scale renewable integration, green hydrogen production for hard-to-decarbonize sectors, carbon capture technologies, and next-generation nuclear power. Investors and operators must take a portfolio approach across this technology landscape.</p>
+            
+            <h5>The Grid of the Future</h5>
+            <p>Decentralized, bidirectional energy systems are replacing the traditional hub-and-spoke model. Smart grids, virtual power plants, and peer-to-peer energy trading platforms are creating new business models and market opportunities. Companies that can aggregate and orchestrate distributed energy resources will capture significant value in the evolving energy ecosystem.</p>
+            
+            <h5>Policy and Market Dynamics</h5>
+            <p>Government policies—carbon pricing, renewable mandates, tax incentives—are critical drivers of the energy transition. Successful strategies must account for regulatory complexity across jurisdictions while positioning for policy evolution. Additionally, corporate sustainability commitments are creating massive demand for renewable energy and carbon offsets, fundamentally reshaping power purchase dynamics.</p>
+        `
+    },
+    5: {
+        title: 'Consumer & Retail',
+        subtitle: 'E-commerce & Brands',
+        icon: 'fa-store',
+        articleTitle: 'Retail Reimagined: The Future of Commerce',
+        article: `
+            <p>Retail is experiencing a fundamental reinvention driven by changing consumer behaviors, technological capabilities, and competitive dynamics. The pandemic accelerated trends that were already underway, creating a "retail apocalypse" for some while opening unprecedented opportunities for others.</p>
+            
+            <h5>The Omnichannel Imperative</h5>
+            <p>The distinction between online and offline retail has dissolved. Consumers expect seamless experiences across all touchpoints—researching online before buying in-store, or ordering online for curbside pickup. Retailers must integrate inventory management, customer data, and fulfillment operations across channels to meet these expectations. Those achieving true omnichannel excellence are seeing 20-30% higher customer lifetime values.</p>
+            
+            <h5>Direct-to-Consumer Revolution</h5>
+            <p>Digital platforms have enabled brands to bypass traditional retail intermediaries and build direct customer relationships. This shift provides better margins, richer customer data, and stronger brand control—but requires capabilities in e-commerce, logistics, and digital marketing. Established brands and new entrants alike are reconfiguring their channel strategies to balance DTC and wholesale relationships.</p>
+            
+            <h5>Experience and Community</h5>
+            <p>As e-commerce commoditizes product access, physical retail is evolving from transaction-focused to experience-centered. Successful retailers are creating destinations that combine shopping with entertainment, education, and community building. Additionally, brands are leveraging social commerce and building engaged communities that drive both acquisition and retention through authentic connections and user-generated content.</p>
+        `
+    },
+    6: {
+        title: 'Industrial & Manufacturing',
+        subtitle: 'Smart Factories & IoT',
+        icon: 'fa-industry',
+        articleTitle: 'Industry 4.0: The Smart Manufacturing Revolution',
+        article: `
+            <p>Manufacturing is undergoing its fourth industrial revolution—Industry 4.0—as digital technologies transform operations, business models, and competitive dynamics. The convergence of IoT, AI, robotics, and advanced analytics is creating "smart factories" that are more efficient, flexible, and responsive than ever before.</p>
+            
+            <h5>The Connected Factory</h5>
+            <p>Industrial IoT sensors are generating unprecedented visibility into production processes, equipment performance, and supply chain dynamics. Real-time data enables predictive maintenance, quality control, and operational optimization at scales previously impossible. Leading manufacturers are achieving 15-30% improvements in overall equipment effectiveness through IoT-enabled insights.</p>
+            
+            <h5>Automation and Augmentation</h5>
+            <p>Advanced robotics and AI are not simply replacing human workers—they're augmenting human capabilities and enabling mass customization at scale. Collaborative robots work alongside humans, AI systems optimize production scheduling, and augmented reality guides workers through complex tasks. The most successful implementations balance automation with human expertise, creating hybrid operations that leverage the strengths of both.</p>
+            
+            <h5>Reshaping Supply Chains</h5>
+            <p>Industry 4.0 technologies are enabling more resilient, responsive, and sustainable supply chains. Digital twins provide end-to-end visibility, blockchain ensures traceability and trust, and AI optimizes inventory and logistics in real-time. The pandemic exposed vulnerabilities in globalized supply chains, accelerating adoption of these technologies and prompting strategic reassessments of sourcing and manufacturing footprints.</p>
+        `
+    },
+    7: {
+        title: 'Telecommunications',
+        subtitle: '5G & Connectivity',
+        icon: 'fa-network-wired',
+        articleTitle: '5G and Beyond: The Next Generation of Connectivity',
+        article: `
+            <p>5G represents more than incremental improvements in mobile connectivity—it's a platform technology enabling entirely new applications and business models. As 5G networks roll out globally and attention turns to 6G research, telecommunications companies face both tremendous opportunities and existential challenges.</p>
+            
+            <h5>Beyond Faster Phones</h5>
+            <p>While enhanced mobile broadband grabs headlines, 5G's transformative potential lies in enabling massive IoT deployments and ultra-reliable low-latency communications. These capabilities unlock applications from autonomous vehicles to remote surgery to smart cities. Telecom operators must look beyond traditional connectivity services to capture value from these emerging use cases.</p>
+            
+            <h5>Edge Computing Convergence</h5>
+            <p>5G and edge computing are co-enabling technologies. By processing data closer to where it's generated, edge computing addresses latency and bandwidth challenges while improving privacy and reducing costs. Telecom operators are uniquely positioned to provide edge infrastructure, but face competition from cloud providers and must develop new partnerships and business models.</p>
+            
+            <h5>Strategic Imperatives</h5>
+            <p>5G deployment requires massive capital investments at a time when traditional telecom revenues face pressure. Success requires strategic focus on high-value use cases, partnerships across the ecosystem, and potentially new business models like network slicing and private networks. Additionally, operators must navigate complex regulatory landscapes and address concerns about security, particularly regarding network equipment sourcing.</p>
+        `
+    },
+    8: {
+        title: 'Real Estate & Infrastructure',
+        subtitle: 'PropTech & Development',
+        icon: 'fa-home',
+        articleTitle: 'PropTech and the Future of Real Estate',
+        article: `
+            <p>Real estate, traditionally one of the least digitized industries, is experiencing rapid technological transformation. PropTech innovations are reshaping how properties are designed, built, marketed, transacted, managed, and utilized—creating opportunities for new entrants while challenging incumbent business models.</p>
+            
+            <h5>The Smart Building Revolution</h5>
+            <p>Buildings are becoming intelligent, connected platforms. IoT sensors, AI-driven building management systems, and digital twin technologies optimize energy efficiency, space utilization, and occupant experience. Green buildings with smart systems command premium rents and valuations while reducing operating costs by 20-30%. As ESG pressures intensify, smart building capabilities are transitioning from nice-to-have to must-have.</p>
+            
+            <h5>Digital Transformation of Transactions</h5>
+            <p>Technology is streamlining every aspect of real estate transactions—from virtual tours and e-signatures to blockchain-based title management and fractional ownership platforms. These innovations reduce transaction costs, increase market liquidity, and expand access to real estate investment. Traditional intermediaries must adapt their value propositions or risk disintermediation.</p>
+            
+            <h5>Flexible Space and New Models</h5>
+            <p>The rise of remote work, changing retail dynamics, and evolving lifestyle preferences are driving demand for flexible, adaptable spaces. Co-working operators, flexible lease platforms, and mixed-use developments are responding to these shifts. Real estate developers and investors must rethink asset strategies, considering not just location and physical attributes but also flexibility, community amenities, and technological infrastructure that enable diverse use cases.</p>
+        `
+    }
+};
+
+// Open modal when clicking a sector card
+sectorCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const sectorId = card.getAttribute('data-sector');
+        const sector = sectorData[sectorId];
+        
+        if (sector) {
+            // Update modal content
+            document.getElementById('sectorModalTitle').textContent = sector.title;
+            document.getElementById('sectorModalSubtitle').textContent = sector.subtitle;
+            document.getElementById('sectorModalArticleTitle').textContent = sector.articleTitle;
+            document.getElementById('sectorModalArticle').innerHTML = sector.article;
+            document.getElementById('sectorModalIcon').innerHTML = `<i class="fas ${sector.icon}"></i>`;
+            
+            // Show modal
+            sectorModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    });
+});
+
+// Close modal when clicking close button
+if (closeSectorModalBtn) {
+    closeSectorModalBtn.addEventListener('click', () => {
+        sectorModal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    });
+}
+
+// Close modal when clicking outside the modal content
+sectorModal.addEventListener('click', (e) => {
+    if (e.target === sectorModal) {
+        sectorModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close sector modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sectorModal.classList.contains('active')) {
+        sectorModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 });

@@ -35,7 +35,7 @@
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#who-we-are" class="nav-link">Who We Are</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#focus-sectors" class="nav-link">Focus Sectors</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
@@ -332,91 +332,159 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- Focus Sectors Section -->
+    <section id="focus-sectors" class="focus-sectors">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Our Portfolio</h2>
+                <h2 class="section-title">Our Focus Sectors</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">Success stories that inspire confidence</p>
+                <p class="section-subtitle">Thought leadership across key industries</p>
             </div>
-            <div class="portfolio-filters" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="finance">Finance</button>
-                <button class="filter-btn" data-filter="technology">Technology</button>
-                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-                <button class="filter-btn" data-filter="retail">Retail</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="finance" data-aos="zoom-in">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-university"></i>
+            <div class="sectors-scroll-wrapper">
+                <button class="scroll-btn scroll-left" id="sectorsScrollLeft">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="sectors-grid" id="sectorsGrid">
+                    <!-- Sector Card 1 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="100" data-sector="1">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-university"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Financial Services</h4>
+                            <p class="sector-subtitle">Banking & Capital Markets</p>
+                            <p class="sector-teaser">Digital transformation in finance</p>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Global Bank Transformation</h4>
-                        <p>Comprehensive digital transformation for a leading financial institution</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="technology" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-laptop-code"></i>
+
+                    <!-- Sector Card 2 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="150" data-sector="2">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Technology & Software</h4>
+                            <p class="sector-subtitle">Innovation & Digital</p>
+                            <p class="sector-teaser">The future of enterprise tech</p>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Tech Startup Scale-up</h4>
-                        <p>Strategic growth planning for a SaaS unicorn</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="healthcare" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-hospital"></i>
+
+                    <!-- Sector Card 3 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="200" data-sector="3">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Healthcare & Life Sciences</h4>
+                            <p class="sector-subtitle">Medical & Biotech</p>
+                            <p class="sector-teaser">Healthcare's next chapter</p>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Healthcare Network Merger</h4>
-                        <p>M&A advisory for regional hospital consolidation</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="retail" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-shopping-cart"></i>
+
+                    <!-- Sector Card 4 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="250" data-sector="4">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Energy & Sustainability</h4>
+                            <p class="sector-subtitle">Renewable & Green Tech</p>
+                            <p class="sector-teaser">The energy transition</p>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Retail Chain Optimization</h4>
-                        <p>Operational excellence program for national retailer</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="finance" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-chart-pie"></i>
+
+                    <!-- Sector Card 5 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="300" data-sector="5">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-store"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Consumer & Retail</h4>
+                            <p class="sector-subtitle">E-commerce & Brands</p>
+                            <p class="sector-teaser">Retail reimagined</p>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Investment Fund Advisory</h4>
-                        <p>Strategic positioning for private equity firm</p>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="technology" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="portfolio-image">
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-mobile-alt"></i>
+
+                    <!-- Sector Card 6 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="350" data-sector="6">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Industrial & Manufacturing</h4>
+                            <p class="sector-subtitle">Smart Factories & IoT</p>
+                            <p class="sector-teaser">Industry 4.0 insights</p>
                         </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h4>Mobile Platform Launch</h4>
-                        <p>Go-to-market strategy for fintech innovation</p>
+
+                    <!-- Sector Card 7 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="400" data-sector="7">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Telecommunications</h4>
+                            <p class="sector-subtitle">5G & Connectivity</p>
+                            <p class="sector-teaser">Connected world strategies</p>
+                        </div>
+                    </div>
+
+                    <!-- Sector Card 8 -->
+                    <div class="sector-card" data-aos="fade-right" data-aos-delay="450" data-sector="8">
+                        <div class="sector-image">
+                            <div class="sector-placeholder">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </div>
+                        <div class="sector-info">
+                            <h4>Real Estate & Infrastructure</h4>
+                            <p class="sector-subtitle">PropTech & Development</p>
+                            <p class="sector-teaser">Building tomorrow's cities</p>
+                        </div>
                     </div>
                 </div>
+                <button class="scroll-btn scroll-right" id="sectorsScrollRight">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
+
+    <!-- Sector Modal Overlay -->
+    <div id="sectorModal" class="sector-modal">
+        <div class="sector-modal-content">
+            <button class="sector-modal-close" id="closeSectorModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="sector-modal-header">
+                <div class="sector-modal-icon" id="sectorModalIcon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3 id="sectorModalTitle">Sector Title</h3>
+                <p class="sector-modal-subtitle" id="sectorModalSubtitle">Sector Subtitle</p>
+            </div>
+            <div class="sector-modal-body">
+                <h4 class="sector-modal-article-title" id="sectorModalArticleTitle">Article Title</h4>
+                <div class="sector-modal-article" id="sectorModalArticle">
+                    <p>Thought leadership article will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Team Section -->
     <section id="who-we-are" class="team">
