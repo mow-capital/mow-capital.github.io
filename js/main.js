@@ -254,3 +254,156 @@ cards.forEach(card => {
         this.style.setProperty('--mouse-y', `${y}px`);
     });
 });
+
+// ===========================
+// Deals Section - Click on Deal Count to Scroll
+// ===========================
+const dealCountStat = document.getElementById('dealCountStat');
+const dealsSection = document.getElementById('deals');
+
+if (dealCountStat && dealsSection) {
+    dealCountStat.addEventListener('click', () => {
+        const offsetTop = dealsSection.offsetTop - 80;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ===========================
+// Deals Horizontal Scroll Navigation
+// ===========================
+const dealsGrid = document.getElementById('dealsGrid');
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
+
+if (scrollLeftBtn && scrollRightBtn && dealsGrid) {
+    const scrollAmount = 350;
+
+    scrollLeftBtn.addEventListener('click', () => {
+        dealsGrid.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    scrollRightBtn.addEventListener('click', () => {
+        dealsGrid.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ===========================
+// Deal Modal Functionality
+// ===========================
+const dealModal = document.getElementById('dealModal');
+const closeModalBtn = document.getElementById('closeModal');
+const dealCards = document.querySelectorAll('.deal-card');
+
+// Deal data with descriptions
+const dealData = {
+    1: {
+        title: 'Tech Merger Advisory',
+        category: 'Technology',
+        value: '$500M Transaction',
+        icon: 'fa-building',
+        description: `Advised on the strategic merger of two leading technology firms, combining their complementary product portfolios and market reach. The transaction created significant synergies in R&D and go-to-market capabilities, positioning the combined entity as a market leader in enterprise software solutions. Our team managed the entire deal lifecycle from valuation to regulatory approvals, ensuring a smooth integration process that preserved shareholder value.`
+    },
+    2: {
+        title: 'Banking Acquisition',
+        category: 'Finance',
+        value: '$1.2B Transaction',
+        icon: 'fa-university',
+        description: `Led the acquisition advisory for a regional banking institution expanding into new markets through strategic acquisition. The transaction involved comprehensive due diligence, regulatory compliance navigation, and integration planning across multiple jurisdictions. Our financial modeling and risk assessment frameworks enabled the client to achieve their expansion goals while maintaining capital adequacy ratios and regulatory compliance throughout the process.`
+    },
+    3: {
+        title: 'Healthcare Network Consolidation',
+        category: 'Healthcare',
+        value: '$750M Transaction',
+        icon: 'fa-hospital',
+        description: `Facilitated the consolidation of three regional healthcare networks to create economies of scale and improve patient care delivery. The transaction required careful navigation of complex regulatory requirements, physician employment agreements, and managed care contracts. Our healthcare specialists developed innovative solutions to preserve clinical autonomy while achieving operational efficiencies, resulting in improved financial performance and patient outcomes.`
+    },
+    4: {
+        title: 'Retail Chain Expansion',
+        category: 'Retail',
+        value: '$350M Transaction',
+        icon: 'fa-shopping-cart',
+        description: `Advised a national retail chain on its strategic expansion through acquisition of complementary retail assets in high-growth markets. The transaction included comprehensive market analysis, real estate portfolio optimization, and supply chain integration planning. Our retail experts identified significant cost synergies in procurement and distribution while preserving the acquired brand's customer loyalty and market positioning in key demographic segments.`
+    },
+    5: {
+        title: 'Manufacturing M&A',
+        category: 'Industrial',
+        value: '$900M Transaction',
+        icon: 'fa-industry',
+        description: `Orchestrated the merger of two manufacturing companies to create a vertically integrated industry leader with enhanced production capabilities and market access. The transaction involved complex operational due diligence, including plant assessments, supply chain analysis, and workforce integration planning. Our industrial team identified opportunities for operational excellence through lean manufacturing principles and technology investments that drove significant margin improvements.`
+    },
+    6: {
+        title: 'Private Equity Investment',
+        category: 'Finance',
+        value: '$600M Transaction',
+        icon: 'fa-chart-line',
+        description: `Advised a private equity firm on a platform investment in the business services sector, including buy-and-build strategy development and operational improvement initiatives. The transaction required sophisticated financial modeling, management assessment, and market positioning analysis. Our team developed a comprehensive value creation plan that identified multiple expansion opportunities and operational improvements, providing a clear roadmap to achieve target returns over the investment period.`
+    },
+    7: {
+        title: 'SaaS Platform Acquisition',
+        category: 'Technology',
+        value: '$400M Transaction',
+        icon: 'fa-mobile-alt',
+        description: `Guided the acquisition of a high-growth SaaS platform by a strategic buyer seeking to expand its cloud-based product offerings. The transaction included detailed technology due diligence, customer contract analysis, and revenue model optimization. Our technology specialists evaluated the platform's scalability, security architecture, and competitive positioning to ensure alignment with the acquirer's strategic objectives and identified opportunities for cross-selling and product integration.`
+    },
+    8: {
+        title: 'Renewable Energy Investment',
+        category: 'Energy',
+        value: '$1.5B Transaction',
+        icon: 'fa-leaf',
+        description: `Structured and advised on a landmark renewable energy infrastructure investment involving solar and wind generation assets across multiple states. The transaction required expertise in project finance, power purchase agreements, and regulatory incentives at federal and state levels. Our energy team conducted comprehensive technical and commercial due diligence, negotiated favorable financing terms, and developed an asset management strategy to optimize long-term returns while supporting the client's sustainability objectives.`
+    }
+};
+
+// Open modal when clicking a deal card
+dealCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const dealId = card.getAttribute('data-deal');
+        const deal = dealData[dealId];
+        
+        if (deal) {
+            // Update modal content
+            document.getElementById('modalTitle').textContent = deal.title;
+            document.getElementById('modalCategory').innerHTML = `<i class="fas fa-tag"></i> ${deal.category}`;
+            document.getElementById('modalValue').textContent = deal.value;
+            document.getElementById('modalDescription').innerHTML = `<p>${deal.description}</p>`;
+            document.getElementById('modalIcon').innerHTML = `<i class="fas ${deal.icon}"></i>`;
+            
+            // Show modal
+            dealModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    });
+});
+
+// Close modal when clicking close button
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        dealModal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+    });
+}
+
+// Close modal when clicking outside the modal content
+dealModal.addEventListener('click', (e) => {
+    if (e.target === dealModal) {
+        dealModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dealModal.classList.contains('active')) {
+        dealModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
