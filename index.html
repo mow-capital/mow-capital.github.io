@@ -1,867 +1,293 @@
-<!DOCTYPE html><!DOCTYPE html>
-
-<html lang="en"><html lang="en">
-
-<head><head>
-
-    <meta charset="UTF-8">    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="MoWCapital - Premier Strategic Advisory and Consulting Services">    <meta name="description" content="Man O' War Capital - Powering the Next Leap. Coming Soon.">
-
-    <meta name="keywords" content="advisory, consulting, strategic planning, business solutions">    <title>Man O' War Capital - Coming Soon</title>
-
-    <title>MoWCapital - Strategic Advisory Excellence</title>    <link rel="icon" type="image/png" href="images/MoW-FavIcon.png">
-
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->    <!-- Font Awesome -->
-
-    <link rel="icon" type="image/png" href="images/MoW-FavIcon.png">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-        <style>
-
-    <!-- Google Fonts -->        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">        :root {
-
-                --emerald: #50C878;
-
-    <!-- Font Awesome -->            --emerald-dark: #3DA563;
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">            --pure-black: #000000;
-
-                --off-white: #F5F5F5;
-
-    <!-- AOS Animation Library -->        }
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">        body {
-
-                font-family: 'Poppins', sans-serif;
-
-    <!-- Custom CSS -->            background: radial-gradient(circle at top right, rgba(80,200,120,0.15) 0%, var(--pure-black) 40%, var(--pure-black) 100%);
-
-    <link rel="stylesheet" href="css/style.css">            color: var(--off-white);
-
-</head>            min-height: 100vh;
-
-<body>            display: flex;
-
-    <!-- Navigation -->            flex-direction: column;
-
-    <nav id="navbar" class="navbar">            align-items: center;
-
-        <div class="container">            justify-content: center;
-
-            <div class="nav-wrapper">            overflow-x: hidden;
-
-                <div class="logo">            position: relative;
-
-                    <img src="images/MoW-NewLogo.jpg" alt="MoWCapital Logo" class="logo-img">        }
-
-                </div>        body::before {
-
-                <ul class="nav-menu" id="navMenu">            content: '';
-
-                    <li><a href="#home" class="nav-link">Home</a></li>            position: absolute;
-
-                    <li><a href="#about" class="nav-link">About</a></li>            top: 0; left: 0;
-
-                    <li><a href="#services" class="nav-link">Services</a></li>            width: 100%; height: 100%;
-
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>            background: linear-gradient(45deg, transparent 48%, rgba(80,200,120,0.03) 50%, transparent 52%),
-
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>                        linear-gradient(-45deg, transparent 48%, rgba(80,200,120,0.03) 50%, transparent 52%);
-
-                    <li><a href="#contact" class="nav-link">Contact</a></li>            background-size: 60px 60px;
-
-                </ul>            opacity: 0.3;
-
-                <div class="hamburger" id="hamburger">            animation: gridMove 20s linear infinite;
-
-                    <span></span>            z-index: 0;
-
-                    <span></span>        }
-
-                    <span></span>        @keyframes gridMove {
-
-                </div>            0% { transform: translate(0, 0); }
-
-            </div>            100% { transform: translate(60px, 60px); }
-
-        </div>        }
-
-    </nav>        .container {
-
-            text-align: center;
-
-    <!-- Hero Section -->            padding: 40px 20px;
-
-    <section id="home" class="hero">            max-width: 800px;
-
-        <div class="hero-overlay"></div>            position: relative;
-
-        <div class="container">            z-index: 1;
-
-            <div class="hero-content" data-aos="fade-up">        }
-
-                <img src="images/MoW-NewLogo.jpg" alt="MoWCapital" class="hero-logo">        .logo {
-
-                <h1 class="hero-title">Strategic Advisory Excellence</h1>            max-width: 400px;
-
-                <p class="hero-subtitle">Empowering businesses with innovative solutions and strategic insights</p>            width: 90%;
-
-                <a href="#contact" class="btn btn-primary">Get Started</a>            margin: 0 auto 40px;
-
-            </div>            padding: 30px;
-
-        </div>            background: linear-gradient(135deg, rgba(80,200,120,0.1) 0%, rgba(0,0,0,0.6) 100%);
-
-    </section>            border-radius: 25px;
-
-            backdrop-filter: blur(20px);
-
-    <!-- Stats Section -->            border: 2px solid rgba(80,200,120,0.3);
-
-    <section class="stats">            box-shadow: 0 8px 32px rgba(80,200,120,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
-
-        <div class="container">            animation: float 6s ease-in-out infinite;
-
-            <div class="stats-grid">        }
-
-                <div class="stat-item stat-clickable" data-aos="fade-up" data-aos-delay="100" id="dealCountStat">        .logo img { width: 100%; height: auto; display: block; }
-
-                    <i class="fas fa-handshake stat-icon"></i>        @keyframes float {
-
-                    <h3 class="stat-number" data-target="25">0</h3>            0%, 100% { transform: translateY(0px); }
-
-                    <p class="stat-label">Deal Count</p>            50% { transform: translateY(-15px); }
-
-                    <span class="click-hint">Click to view deals</span>        }
-
-                </div>        h1 {
-
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">            font-size: 3rem;
-
-                    <i class="fas fa-users stat-icon"></i>            font-weight: 700;
-
-                    <h3 class="stat-number" data-target="40">0</h3>            margin-bottom: 20px;
-
-                    <p class="stat-label">Partners Advised</p>            background: linear-gradient(135deg, var(--emerald) 0%, var(--off-white) 100%);
-
-                </div>            -webkit-background-clip: text;
-
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">            -webkit-text-fill-color: transparent;
-
-                    <i class="fas fa-trophy stat-icon"></i>            background-clip: text;
-
-                    <h3 class="stat-number" data-target="15">0</h3>            animation: fadeInUp 1s ease 0.3s both;
-
-                    <p class="stat-label">Years of Experience</p>        }
-
-                </div>        .tagline {
-
-            </div>            font-size: 1.5rem;
-
-        </div>            font-weight: 300;
-
-    </section>            color: var(--emerald);
-
-            margin-bottom: 40px;
-
-    <!-- Deals Section -->            text-shadow: 0 0 20px rgba(80,200,120,0.5);
-
-    <section id="deals" class="deals">            animation: fadeInUp 1s ease 0.6s both;
-
-        <div class="container">        }
-
-            <div class="section-header" data-aos="fade-up">        .message {
-
-                <h2 class="section-title">Our Deals</h2>            font-size: 1.2rem;
-
-                <div class="title-underline"></div>            color: var(--off-white);
-
-                <p class="section-subtitle">Strategic partnerships driving exceptional value</p>            margin-bottom: 50px;
-
-            </div>            line-height: 1.8;
-
-            <div class="deals-scroll-container" data-aos="fade-up">            opacity: 0.9;
-
-                <div class="deals-grid">            animation: fadeInUp 1s ease 0.9s both;
-
-                    <!-- Deal Card 1 -->        }
-
-                    <div class="deal-card" data-deal-id="1">        .contact-info {
-
-                        <div class="deal-image">            display: flex;
-
-                            <div class="deal-placeholder">            flex-direction: column;
-
-                                <i class="fas fa-chart-line"></i>            gap: 15px;
-
-                            </div>            align-items: center;
-
-                        </div>            margin-top: 40px;
-
-                        <div class="deal-info">            animation: fadeInUp 1s ease 1.2s both;
-
-                            <h4>Tech Acquisition Advisory</h4>        }
-
-                            <p class="deal-category">Technology</p>        .contact-item {
-
-                            <p class="deal-value">$50M+</p>            display: flex;
-
-                        </div>            align-items: center;
-
-                    </div>            gap: 10px;
-
-            font-size: 1.1rem;
-
-                    <!-- Deal Card 2 -->            color: var(--off-white);
-
-                    <div class="deal-card" data-deal-id="2">            padding: 12px 24px;
-
-                        <div class="deal-image">            background: rgba(80,200,120,0.1);
-
-                            <div class="deal-placeholder">            border-radius: 30px;
-
-                                <i class="fas fa-hospital"></i>            border: 1px solid rgba(80,200,120,0.3);
-
-                            </div>            transition: all 0.3s ease;
-
-                        </div>        }
-
-                        <div class="deal-info">        .contact-item:hover {
-
-                            <h4>Healthcare Network Merger</h4>            background: rgba(80,200,120,0.2);
-
-                            <p class="deal-category">Healthcare</p>            border-color: var(--emerald);
-
-                            <p class="deal-value">$200M+</p>            transform: translateY(-2px);
-
-                        </div>            box-shadow: 0 4px 20px rgba(80,200,120,0.3);
-
-                    </div>        }
-
-        .contact-item a {
-
-                    <!-- Deal Card 3 -->            color: var(--emerald);
-
-                    <div class="deal-card" data-deal-id="3">            text-decoration: none;
-
-                        <div class="deal-image">            font-weight: 500;
-
-                            <div class="deal-placeholder">        }
-
-                                <i class="fas fa-building"></i>        .contact-item a:hover { color: var(--off-white); }
-
-                            </div>        
-
-                        </div>        /* Contact Section */
-
-                        <div class="deal-info">        .contact-section {
-
-                            <h4>Real Estate Portfolio Sale</h4>            width: 100%;
-
-                            <p class="deal-category">Real Estate</p>            max-width: 1200px;
-
-                            <p class="deal-value">$150M+</p>            padding: 60px 20px 100px;
-
-                        </div>            position: relative;
-
-                    </div>            z-index: 1;
-
-        }
-
-                    <!-- Deal Card 4 -->        .section-title {
-
-                    <div class="deal-card" data-deal-id="4">            font-size: 2.5rem;
-
-                        <div class="deal-image">            font-weight: 700;
-
-                            <div class="deal-placeholder">            text-align: center;
-
-                                <i class="fas fa-industry"></i>            margin-bottom: 15px;
-
-                            </div>            background: linear-gradient(135deg, var(--emerald) 0%, var(--off-white) 100%);
-
-                        </div>            -webkit-background-clip: text;
-
-                        <div class="deal-info">            -webkit-text-fill-color: transparent;
-
-                            <h4>Manufacturing M&A</h4>            background-clip: text;
-
-                            <p class="deal-category">Manufacturing</p>        }
-
-                            <p class="deal-value">$75M+</p>        .title-underline {
-
-                        </div>            width: 80px;
-
-                    </div>            height: 4px;
-
-            background: linear-gradient(90deg, var(--emerald) 0%, #6FD896 100%);
-
-                    <!-- Deal Card 5 -->            margin: 0 auto 20px;
-
-                    <div class="deal-card" data-deal-id="5">            box-shadow: 0 0 10px rgba(80,200,120,0.6);
-
-                        <div class="deal-image">        }
-
-                            <div class="deal-placeholder">        .section-subtitle {
-
-                                <i class="fas fa-store"></i>            text-align: center;
-
-                            </div>            font-size: 1.2rem;
-
-                        </div>            color: #757575;
-
-                        <div class="deal-info">            margin-bottom: 50px;
-
-                            <h4>Retail Chain Expansion</h4>        }
-
-                            <p class="deal-category">Retail</p>        .contact-content {
-
-                            <p class="deal-value">$30M+</p>            display: grid;
-
-                        </div>            grid-template-columns: 1fr 1.5fr;
-
-                    </div>            gap: 60px;
-
-            align-items: start;
-
-                    <!-- Deal Card 6 -->        }
-
-                    <div class="deal-card" data-deal-id="6">        .contact-info-section {
-
-                        <div class="deal-image">            display: flex;
-
-                            <div class="deal-placeholder">            flex-direction: column;
-
-                                <i class="fas fa-laptop-code"></i>            gap: 25px;
-
-                            </div>        }
-
-                        </div>        .contact-detail-item {
-
-                        <div class="deal-info">            display: flex;
-
-                            <h4>SaaS Platform Valuation</h4>            gap: 20px;
-
-                            <p class="deal-category">Technology</p>            align-items: start;
-
-                            <p class="deal-value">$100M+</p>        }
-
-                        </div>        .contact-icon {
-
-                    </div>            width: 50px;
-
-            height: 50px;
-
-                    <!-- Deal Card 7 -->            background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
-
-                    <div class="deal-card" data-deal-id="7">            color: var(--pure-black);
-
-                        <div class="deal-image">            display: flex;
-
-                            <div class="deal-placeholder">            align-items: center;
-
-                                <i class="fas fa-leaf"></i>            justify-content: center;
-
-                            </div>            border-radius: 50%;
-
-                        </div>            font-size: 1.3rem;
-
-                        <div class="deal-info">            flex-shrink: 0;
-
-                            <h4>Green Energy Investment</h4>            box-shadow: 0 4px 15px rgba(80,200,120,0.4);
-
-                            <p class="deal-category">Energy</p>        }
-
-                            <p class="deal-value">$250M+</p>        .contact-details h4 {
-
-                        </div>            font-size: 1.2rem;
-
-                    </div>            margin-bottom: 5px;
-
-            color: var(--off-white);
-
-                    <!-- Deal Card 8 -->            font-weight: 600;
-
-                    <div class="deal-card" data-deal-id="8">        }
-
-                        <div class="deal-image">        .contact-details p {
-
-                            <div class="deal-placeholder">            color: #757575;
-
-                                <i class="fas fa-graduation-cap"></i>            line-height: 1.6;
-
-                            </div>        }
-
-                        </div>        .contact-details a {
-
-                        <div class="deal-info">            color: var(--emerald);
-
-                            <h4>EdTech Funding Round</h4>            text-decoration: none;
-
-                            <p class="deal-category">Education</p>        }
-
-                            <p class="deal-value">$20M+</p>        .contact-details a:hover {
-
-                        </div>            color: var(--off-white);
-
-                    </div>        }
-
-                </div>        .contact-form {
-
-            </div>            background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
-
-        </div>            padding: 40px;
-
-    </section>            border-radius: 15px;
-
-            border: 2px solid rgba(80,200,120,0.2);
-
-    <!-- Deal Overlay Modal -->            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-
-    <div id="dealOverlay" class="deal-overlay">        }
-
-        <div class="deal-overlay-content">        .form-group {
-
-            <button class="deal-overlay-close">&times;</button>            margin-bottom: 20px;
-
-            <div class="deal-overlay-header">        }
-
-                <div class="deal-overlay-icon">        .form-group input,
-
-                    <i class="fas fa-handshake"></i>        .form-group textarea {
-
-                </div>            width: 100%;
-
-                <h3 id="dealOverlayTitle">Deal Title</h3>            padding: 15px;
-
-                <p id="dealOverlayCategory" class="deal-overlay-category">Category</p>            border: 2px solid #3F3F3F;
-
-            </div>            border-radius: 8px;
-
-            <div class="deal-overlay-body">            font-family: 'Poppins', sans-serif;
-
-                <p id="dealOverlayDescription">Deal description will appear here...</p>            font-size: 1rem;
-
-            </div>            transition: all 0.3s ease;
-
-            <div class="deal-overlay-footer">            background-color: #0F0F0F;
-
-                <span id="dealOverlayValue" class="deal-overlay-value">$0M+</span>            color: var(--off-white);
-
-            </div>        }
-
-        </div>        .form-group input::placeholder,
-
-    </div>        .form-group textarea::placeholder {
-
-            color: #757575;
-
-    <!-- About Section -->        }
-
-    <section id="about" class="about">        .form-group input:focus,
-
-        <div class="container">        .form-group textarea:focus {
-
-            <div class="section-header" data-aos="fade-up">            outline: none;
-
-                <h2 class="section-title">About MoWCapital</h2>            border-color: var(--emerald);
-
-                <div class="title-underline"></div>            box-shadow: 0 0 15px rgba(80,200,120,0.3);
-
-                <p class="section-subtitle">Your trusted partner in strategic business transformation</p>            background-color: #1A1A1A;
-
-            </div>        }
-
-            <div class="about-content">        .btn {
-
-                <div class="about-text" data-aos="fade-right">            display: inline-block;
-
-                    <h3>Excellence in Strategic Advisory</h3>            padding: 12px 30px;
-
-                    <p>At MoWCapital, we specialize in delivering cutting-edge strategic advisory services that drive sustainable growth and competitive advantage. Our team of seasoned professionals brings decades of combined experience across diverse industries.</p>            border-radius: 5px;
-
-                    <p>We believe in a client-centric approach, tailoring our solutions to meet your unique challenges and objectives. Our commitment to excellence, integrity, and innovation sets us apart in the advisory landscape.</p>            text-decoration: none;
-
-                    <div class="about-features">            font-weight: 700;
-
-                        <div class="feature-item">            transition: all 0.3s ease;
-
-                            <i class="fas fa-check-circle"></i>            border: none;
-
-                            <span>Industry-Leading Expertise</span>            cursor: pointer;
-
-                        </div>            font-size: 1rem;
-
-                        <div class="feature-item">        }
-
-                            <i class="fas fa-check-circle"></i>        .btn-primary {
-
-                            <span>Proven Track Record</span>            background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
-
-                        </div>            color: var(--pure-black);
-
-                        <div class="feature-item">            box-shadow: 0 4px 15px rgba(80,200,120,0.4);
-
-                            <i class="fas fa-check-circle"></i>            position: relative;
-
-                            <span>Customized Solutions</span>            overflow: hidden;
-
-                        </div>            width: 100%;
-
-                        <div class="feature-item">        }
-
-                            <i class="fas fa-check-circle"></i>        .btn-primary::before {
-
-                            <span>24/7 Support</span>            content: '';
-
-                        </div>            position: absolute;
-
-                    </div>            top: 0;
-
-                </div>            left: -100%;
-
-                <div class="about-image" data-aos="fade-left">            width: 100%;
-
-                    <img src="images/MoW-OfficeBuilding.jpg" alt="MoWCapital Office">            height: 100%;
-
-                </div>            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-
-            </div>            transition: left 0.5s ease;
-
-        </div>        }
-
-    </section>        .btn-primary:hover::before {
-
-            left: 100%;
-
-    <!-- Services Section -->        }
-
-    <section id="services" class="services">        .btn-primary:hover {
-
-        <div class="container">            background: linear-gradient(135deg, #6FD896 0%, var(--emerald) 100%);
-
-            <div class="section-header" data-aos="fade-up">            transform: translateY(-3px);
-
-                <h2 class="section-title">Our Services</h2>            box-shadow: 0 8px 25px rgba(80,200,120,0.6);
-
-                <div class="title-underline"></div>        }
-
-                <p class="section-subtitle">Comprehensive solutions tailored to your business needs</p>        .form-message {
-
-            </div>            margin-top: 20px;
-
-            <div class="services-grid">            padding: 15px;
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">            border-radius: 5px;
-
-                    <div class="service-icon">            text-align: center;
-
-                        <i class="fas fa-chart-line"></i>            display: none;
-
-                    </div>        }
-
-                    <h3 class="service-title">Strategic Planning</h3>        .form-message.success {
-
-                    <p class="service-description">Develop comprehensive strategies that align with your business vision and drive long-term success. Our expert consultants work closely with you to create actionable roadmaps.</p>            background-color: rgba(80,200,120,0.2);
-
-                </div>            color: var(--emerald);
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">            border: 1px solid var(--emerald);
-
-                    <div class="service-icon">            display: block;
-
-                        <i class="fas fa-handshake"></i>        }
-
-                    </div>        .form-message.error {
-
-                    <h3 class="service-title">Mergers & Acquisitions</h3>            background-color: rgba(200,80,80,0.2);
-
-                    <p class="service-description">Navigate complex M&A transactions with confidence. We provide end-to-end advisory services from target identification to post-merger integration.</p>            color: #ff6b6b;
-
-                </div>            border: 1px solid #ff6b6b;
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">            display: block;
-
-                    <div class="service-icon">        }
-
-                        <i class="fas fa-cogs"></i>        
-
-                    </div>        .footer {
-
-                    <h3 class="service-title">Operational Excellence</h3>            position: relative;
-
-                    <p class="service-description">Optimize your operations for maximum efficiency and profitability. Our process improvement methodologies deliver measurable results.</p>            width: 100%;
-
-                </div>            text-align: center;
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">            color: rgba(255,255,255,0.5);
-
-                    <div class="service-icon">            font-size: 0.9rem;
-
-                        <i class="fas fa-dollar-sign"></i>            z-index: 1;
-
-                    </div>            padding: 20px;
-
-                    <h3 class="service-title">Financial Advisory</h3>            margin-top: auto;
-
-                    <p class="service-description">Make informed financial decisions with our expert guidance. From capital raising to financial restructuring, we've got you covered.</p>        }
-
-                </div>        .accent {
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">            position: absolute;
-
-                    <div class="service-icon">            width: 4px; height: 4px;
-
-                        <i class="fas fa-shield-alt"></i>            background: var(--emerald);
-
-                    </div>            border-radius: 50%;
-
-                    <h3 class="service-title">Risk Management</h3>            box-shadow: 0 0 10px rgba(80,200,120,0.8);
-
-                    <p class="service-description">Identify, assess, and mitigate business risks effectively. Our comprehensive risk frameworks protect your organization's value.</p>            animation: twinkle 3s ease-in-out infinite;
-
-                </div>        }
-
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">        @keyframes twinkle {
-
-                    <div class="service-icon">            0%, 100% { opacity: 0.3; transform: scale(1); }
-
-                        <i class="fas fa-lightbulb"></i>            50% { opacity: 1; transform: scale(1.5); }
-
-                    </div>        }
-
-                    <h3 class="service-title">Digital Transformation</h3>        .accent:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
-
-                    <p class="service-description">Embrace the digital future with confidence. We help you leverage technology to create competitive advantages and enhance customer experiences.</p>        .accent:nth-child(2) { top: 25%; right: 20%; animation-delay: 1s; }
-
-                </div>        .accent:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 2s; }
-
-            </div>        .accent:nth-child(4) { bottom: 15%; right: 15%; animation-delay: 1.5s; }
-
-        </div>        .accent:nth-child(5) { top: 50%; left: 5%; animation-delay: 0.5s; }
-
-    </section>        .accent:nth-child(6) { top: 60%; right: 8%; animation-delay: 2.5s; }
-
-        @keyframes fadeInUp {
-
-    <!-- Portfolio Section -->            from { opacity: 0; transform: translateY(30px); }
-
-    <section id="portfolio" class="portfolio">            to { opacity: 1; transform: translateY(0); }
-
-        <div class="container">        }
-
-            <div class="section-header" data-aos="fade-up">        @media (max-width: 768px) {
-
-                <h2 class="section-title">Our Portfolio</h2>            h1 { font-size: 2rem; }
-
-                <div class="title-underline"></div>            .tagline { font-size: 1.2rem; }
-
-                <p class="section-subtitle">Success stories that inspire confidence</p>            .message { font-size: 1rem; }
-
-            </div>            .logo { max-width: 280px; padding: 20px; }
-
-            <div class="portfolio-filters" data-aos="fade-up">            .contact-content {
-
-                <button class="filter-btn active" data-filter="all">All</button>                grid-template-columns: 1fr;
-
-                <button class="filter-btn" data-filter="finance">Finance</button>                gap: 40px;
-
-                <button class="filter-btn" data-filter="technology">Technology</button>            }
-
-                <button class="filter-btn" data-filter="healthcare">Healthcare</button>            .section-title { font-size: 2rem; }
-
-                <button class="filter-btn" data-filter="retail">Retail</button>        }
-
-            </div>        @media (max-width: 480px) {
-
-            <div class="portfolio-grid">            h1 { font-size: 1.5rem; }
-
-                <div class="portfolio-item" data-category="finance" data-aos="zoom-in">            .tagline { font-size: 1rem; }
-
-                    <div class="portfolio-image">            .contact-item { font-size: 0.95rem; }
-
-                        <div class="portfolio-placeholder">        }
-
-                            <i class="fas fa-university"></i>    </style>
-
-                        </div></head>
-
-                    </div><body>
-
-                    <div class="portfolio-info">    <div class="accent"></div>
-
-                        <h4>Global Bank Transformation</h4>    <div class="accent"></div>
-
-                        <p>Comprehensive digital transformation for a leading financial institution</p>    <div class="accent"></div>
-
-                    </div>    <div class="accent"></div>
-
-                </div>    <div class="accent"></div>
-
-                <div class="portfolio-item" data-category="technology" data-aos="zoom-in" data-aos-delay="100">    <div class="accent"></div>
-
-                    <div class="portfolio-image">    <div class="container">
-
-                        <div class="portfolio-placeholder">        <div class="logo">
-
-                            <i class="fas fa-laptop-code"></i>            <img src="images/MoW-NewLogo.jpg" alt="Man O' War Capital">
-
-                        </div>        </div>
-
-                    </div>        <h1>Coming Soon</h1>
-
-                    <div class="portfolio-info">        <p class="tagline">Powering the Next Leap</p>
-
-                        <h4>Tech Startup Scale-up</h4>        <p class="message">We're crafting something exceptional.<br>Our platform will be launching shortly.</p>
-
-                        <p>Strategic growth planning for a SaaS unicorn</p>        <div class="contact-info">
-
-                    </div>            <div class="contact-item">
-
-                </div>                <span>📧</span>
-
-                <div class="portfolio-item" data-category="healthcare" data-aos="zoom-in" data-aos-delay="200">                <span>For inquiries: <a href="mailto:hello@mowcaps.com">hello@mowcaps.com</a></span>
-
-                    <div class="portfolio-image">            </div>
-
-                        <div class="portfolio-placeholder">        </div>
-
-                            <i class="fas fa-hospital"></i>    </div>
-
-                        </div>
-
-                    </div>    <!-- Contact Section -->
-
-                    <div class="portfolio-info">    <section class="contact-section">
-
-                        <h4>Healthcare Network Merger</h4>        <div class="section-header">
-
-                        <p>M&A advisory for regional hospital consolidation</p>            <h2 class="section-title">Get In Touch</h2>
-
-                    </div>            <div class="title-underline"></div>
-
-                </div>            <p class="section-subtitle">Let's discuss how we can help transform your business</p>
-
-                <div class="portfolio-item" data-category="retail" data-aos="zoom-in" data-aos-delay="300">        </div>
-
-                    <div class="portfolio-image">        <div class="contact-content">
-
-                        <div class="portfolio-placeholder">            <div class="contact-info-section">
-
-                            <i class="fas fa-shopping-cart"></i>                <div class="contact-detail-item">
-
-                        </div>                    <div class="contact-icon">
-
-                    </div>                        <i class="fas fa-envelope"></i>
-
-                    <div class="portfolio-info">                    </div>
-
-                        <h4>Retail Chain Optimization</h4>                    <div class="contact-details">
-
-                        <p>Operational excellence program for national retailer</p>                        <h4>Email</h4>
-
-                    </div>                        <p><a href="mailto:hello@mowcaps.com">hello@mowcaps.com</a></p>
-
-                </div>                    </div>
-
-                <div class="portfolio-item" data-category="finance" data-aos="zoom-in" data-aos-delay="400">                </div>
-
-                    <div class="portfolio-image">            </div>
-
-                        <div class="portfolio-placeholder">            <form class="contact-form" id="contactForm">
-
-                            <i class="fas fa-chart-pie"></i>                <div class="form-group">
-
-                        </div>                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-                    </div>                </div>
-
-                    <div class="portfolio-info">                <div class="form-group">
-
-                        <h4>Investment Fund Advisory</h4>                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-                        <p>Strategic positioning for private equity firm</p>                </div>
-
-                    </div>                <div class="form-group">
-
-                </div>                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
-
-                <div class="portfolio-item" data-category="technology" data-aos="zoom-in" data-aos-delay="500">                </div>
-
-                    <div class="portfolio-image">                <div class="form-group">
-
-                        <div class="portfolio-placeholder">                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-
-                            <i class="fas fa-mobile-alt"></i>                </div>
-
-                        </div>                <button type="submit" class="btn btn-primary">Open Email Client</button>
-
-                    </div>                <div id="formMessage" class="form-message"></div>
-
-                    <div class="portfolio-info">            </form>
-
-                        <h4>Mobile Platform Launch</h4>        </div>
-
-                        <p>Go-to-market strategy for fintech innovation</p>    </section>
-
-                    </div>
-
-                </div>    <div class="footer">&copy; 2025 Man O' War Capital. All rights reserved.</div>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MoWCapital - Premier Strategic Advisory and Consulting Services">
+    <meta name="keywords" content="advisory, consulting, strategic planning, business solutions">
+    <title>MoWCapital - Strategic Advisory Excellence</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/MoW-FavIcon.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="images/MoW-NewLogo.jpg" alt="MoWCapital Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
+        </div>
+    </nav>
 
-        </div>    <script>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <img src="images/MoW-NewLogo.jpg" alt="MoWCapital" class="hero-logo">
+                <h1 class="hero-title">Strategic Advisory Excellence</h1>
+                <p class="hero-subtitle">Empowering businesses with innovative solutions and strategic insights</p>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
 
-    </section>        // Contact Form - Opens email client with pre-filled data
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-users stat-icon"></i>
+                    <h3 class="stat-number" data-target="500">0</h3>
+                    <p class="stat-label">Satisfied Clients</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-project-diagram stat-icon"></i>
+                    <h3 class="stat-number" data-target="850">0</h3>
+                    <p class="stat-label">Projects Completed</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-trophy stat-icon"></i>
+                    <h3 class="stat-number" data-target="15">0</h3>
+                    <p class="stat-label">Years Experience</p>
+                </div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-globe stat-icon"></i>
+                    <h3 class="stat-number" data-target="45">0</h3>
+                    <p class="stat-label">Global Partners</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        const contactForm = document.getElementById('contactForm');
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">About MoWCapital</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Your trusted partner in strategic business transformation</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Excellence in Strategic Advisory</h3>
+                    <p>At MoWCapital, we specialize in delivering cutting-edge strategic advisory services that drive sustainable growth and competitive advantage. Our team of seasoned professionals brings decades of combined experience across diverse industries.</p>
+                    <p>We believe in a client-centric approach, tailoring our solutions to meet your unique challenges and objectives. Our commitment to excellence, integrity, and innovation sets us apart in the advisory landscape.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Industry-Leading Expertise</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proven Track Record</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Customized Solutions</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <img src="images/MoW-OfficeBuilding.jpg" alt="MoWCapital Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Services</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Comprehensive solutions tailored to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Strategic Planning</h3>
+                    <p class="service-description">Develop comprehensive strategies that align with your business vision and drive long-term success. Our expert consultants work closely with you to create actionable roadmaps.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="service-title">Mergers & Acquisitions</h3>
+                    <p class="service-description">Navigate complex M&A transactions with confidence. We provide end-to-end advisory services from target identification to post-merger integration.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">Operational Excellence</h3>
+                    <p class="service-description">Optimize your operations for maximum efficiency and profitability. Our process improvement methodologies deliver measurable results.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="service-title">Financial Advisory</h3>
+                    <p class="service-description">Make informed financial decisions with our expert guidance. From capital raising to financial restructuring, we've got you covered.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Risk Management</h3>
+                    <p class="service-description">Identify, assess, and mitigate business risks effectively. Our comprehensive risk frameworks protect your organization's value.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-title">Digital Transformation</h3>
+                    <p class="service-description">Embrace the digital future with confidence. We help you leverage technology to create competitive advantages and enhance customer experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Portfolio</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Success stories that inspire confidence</p>
+            </div>
+            <div class="portfolio-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="finance">Finance</button>
+                <button class="filter-btn" data-filter="technology">Technology</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="retail">Retail</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="finance" data-aos="zoom-in">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Global Bank Transformation</h4>
+                        <p>Comprehensive digital transformation for a leading financial institution</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="technology" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Tech Startup Scale-up</h4>
+                        <p>Strategic growth planning for a SaaS unicorn</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="healthcare" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Healthcare Network Merger</h4>
+                        <p>M&A advisory for regional hospital consolidation</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="retail" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Retail Chain Optimization</h4>
+                        <p>Operational excellence program for national retailer</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="finance" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Investment Fund Advisory</h4>
+                        <p>Strategic positioning for private equity firm</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="technology" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Mobile Platform Launch</h4>
+                        <p>Go-to-market strategy for fintech innovation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials Section -->
-
-    <section id="testimonials" class="testimonials">        if (contactForm) {
-
-        <div class="container">            contactForm.addEventListener('submit', (e) => {
-
-            <div class="section-header" data-aos="fade-up">                e.preventDefault();
-
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">What Our Clients Say</h2>
-
-                <div class="title-underline"></div>                const name = document.getElementById('name').value;
-
-                <p class="section-subtitle">Trusted by industry leaders worldwide</p>                const email = document.getElementById('email').value;
-
-            </div>                const subject = document.getElementById('subject').value;
-
-            <div class="testimonials-slider">                const message = document.getElementById('message').value;
-
+                <div class="title-underline"></div>
+                <p class="section-subtitle">Trusted by industry leaders worldwide</p>
+            </div>
+            <div class="testimonials-slider">
                 <div class="testimonial-card active" data-aos="fade-up">
-
-                    <div class="testimonial-quote">                // Construct the mailto URL with pre-filled data
-
-                        <i class="fas fa-quote-left"></i>                const mailtoLink = `mailto:hello@mowcaps.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
                     </div>
-
-                    <p class="testimonial-text">"MoWCapital transformed our business strategy completely. Their insights and expertise helped us achieve 200% growth in just 18 months. Truly exceptional!"</p>                // Open the email client
-
-                    <div class="testimonial-author">                window.location.href = mailtoLink;
-
-                        <h4>Sarah Johnson</h4>            });
-
-                        <p>CEO, TechVenture Inc.</p>        }
-
-                    </div>    </script>
-
-                </div></body>
-
-                <div class="testimonial-card" data-aos="fade-up"></html>
-
+                    <p class="testimonial-text">"MoWCapital transformed our business strategy completely. Their insights and expertise helped us achieve 200% growth in just 18 months. Truly exceptional!"</p>
+                    <div class="testimonial-author">
+                        <h4>Sarah Johnson</h4>
+                        <p>CEO, TechVenture Inc.</p>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="fade-up">
                     <div class="testimonial-quote">
                         <i class="fas fa-quote-left"></i>
                     </div>
@@ -958,5 +384,24 @@
     
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- GoDaddy Website Chat Widget -->
+    <!-- Replace 'YOUR_GODADDY_CHAT_ID' with your actual GoDaddy chat widget ID -->
+    <!-- Get this from: GoDaddy Dashboard > Website Builder > Marketing Tools > Chat -->
+    <script type="text/javascript">
+        // GoDaddy Chat Widget Configuration
+        (function() {
+            // IMPORTANT: Replace this with your actual GoDaddy chat widget script
+            // You can find this in your GoDaddy dashboard under:
+            // Dashboard > Website > Marketing > Chat
+            
+            // Example GoDaddy chat widget code (replace with yours):
+            // var chatWidget = document.createElement('script');
+            // chatWidget.type = 'text/javascript';
+            // chatWidget.async = true;
+            // chatWidget.src = 'https://webchat.godaddy.com/YOUR_CHAT_ID.js';
+            // document.body.appendChild(chatWidget);
+        })();
+    </script>
 </body>
 </html>
