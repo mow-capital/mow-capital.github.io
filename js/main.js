@@ -171,7 +171,7 @@ if (contactForm) {
         const message = document.getElementById('message').value;
 
         // Construct mailto link with pre-filled data
-        const mailtoLink = `mailto:hello@mowcaps.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        const mailtoLink = `mailto:aditya.vardhan@mowcaps.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
         
         // Open email client
         window.location.href = mailtoLink;
