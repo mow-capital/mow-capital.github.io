@@ -156,6 +156,29 @@ if (sectorsScrollLeftBtn && sectorsScrollRightBtn && sectorsGrid) {
 }
 
 // ===========================
+// Partners Horizontal Scroll
+// ===========================
+const partnersScrollLeftBtn = document.getElementById('partnersScrollLeft');
+const partnersScrollRightBtn = document.getElementById('partnersScrollRight');
+const partnersGrid = document.getElementById('partnersGrid');
+
+if (partnersScrollLeftBtn && partnersScrollRightBtn && partnersGrid) {
+    partnersScrollLeftBtn.addEventListener('click', () => {
+        partnersGrid.scrollBy({
+            left: -scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+
+    partnersScrollRightBtn.addEventListener('click', () => {
+        partnersGrid.scrollBy({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ===========================
 // Contact Form Handling
 // ===========================
 const contactForm = document.getElementById('contactForm');

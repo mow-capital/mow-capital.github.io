@@ -1,86 +1,79 @@
+# PARTNERS 
 
- 
-
- 
-
-PARTNERS 
-
-Our Trusted Partners 
+## Our Trusted Partners 
 
 We collaborate closely with a broad network of distinguished financial and advisory firms to deliver comprehensive solutions for our clients: 
 
 Merchant Bankers / Left Lead Merchant Bankers: 
 
-Navigant Corporate Consultant Limited 
+- Navigant Corporate Consultant Limited 
 
-Fastrack Services 
+- Fastrack Services 
 
 Private Credit Funds: 
 
-TruNorth 
+- TruNorth 
 
-Evolvence 
+- Evolvence 
 
-Alpha Alternatives 
+- Alpha Alternatives 
 
-JM Alternatives 
+- JM Alternatives 
 
-JP Morgan 
+- JP Morgan 
 
-ARES 
+- ARES 
 
-Macquarie 
+- Macquarie 
 
 Merchant Bankers & Book Running Lead Managers (BRLM): 
 
-Nuvama Capital 
+- Nuvama Capital 
 
-JP Morgan 
+- JP Morgan 
 
-Axis Bank 
+- Axis Bank 
 
-ICICI Bank 
+- ICICI Bank 
 
 Investment Bankers & Investor Relations/PR Agencies: 
 
-DAM Capital 
+- DAM Capital 
 
-Avendus 
+- Avendus 
 
-AD Factor 
+- AD Factor 
 
 Foreign Portfolio Investors (FPI): 
+ 
+- Temasek 
 
-Temasek 
+- GIC 
 
-GIC 
+- BII 
 
-BII 
+- ADIA 
 
-ADIA 
+- QIT 
 
-QIT 
+- TRTL Ventures 
 
-TRTL Ventures 
+- Fidelity 
 
-Fidelity 
-
-Nomura 
+- Nomura 
 
 Alternative Investment Funds – Debt Fundraising Partners: 
 
-TA Capital 
+- TA Capital 
 
-EFA 
+- EFA 
 
-Stenn 
+- Stenn 
 
-Tradewind 
+- Tradewind 
 
-Incomlent 
+- Incomlent 
 
-Abchlor 
+- Abchlor 
 
 Together, these partnerships underpin our ability to raise over USD 500 million in structured trade finance and alternative investment debt solutions across a wide array of sectors. 
-
-Shape 
