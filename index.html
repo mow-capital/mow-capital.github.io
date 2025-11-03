@@ -65,20 +65,20 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item stat-clickable" id="dealCountStat" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-handshake stat-icon"></i>
-                    <h3 class="stat-number" data-target="150">0</h3>
-                    <p class="stat-label">Deal Count</p>
+                    <i class="fas fa-briefcase stat-icon"></i>
+                    <h3 class="stat-number" data-target="12">0</h3>
+                    <p class="stat-label">Deals Closed</p>
                     <i class="fas fa-chevron-down stat-arrow"></i>
                 </div>
                 <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-users stat-icon"></i>
-                    <h3 class="stat-number" data-target="500">0</h3>
-                    <p class="stat-label">Partners Advised</p>
+                    <i class="fas fa-calendar-alt stat-icon"></i>
+                    <h3 class="stat-number" data-target="30">0</h3>
+                    <p class="stat-label">Combined Years of Experience</p>
                 </div>
                 <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-calendar-alt stat-icon"></i>
-                    <h3 class="stat-number" data-target="15">0</h3>
-                    <p class="stat-label">Years of Exp</p>
+                    <i class="fas fa-users stat-icon"></i>
+                    <h3 class="stat-number" data-target="100">0</h3>
+                    <p class="stat-label">Investors in Network</p>
                 </div>
             </div>
         </div>
@@ -496,7 +496,7 @@
             </div>
             <div class="team-grid">
                 <!-- Team Member 1 -->
-                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100" data-team="1">
                     <div class="team-image">
                         <div class="team-placeholder">
                             <i class="fas fa-user"></i>
@@ -506,11 +506,12 @@
                         <h3>Aditya Vardhan</h3>
                         <p class="team-role">Founder</p>
                         <p class="team-bio">Over a decade of experience in growth-stage investing with a US-based $750M fund. Oversees six portfolio companies in India, specializing in DeepTech and AI ventures from pre-seed to Series B.</p>
+                        <p class="team-read-more"><i class="fas fa-chevron-right"></i> Read Full Bio</p>
                     </div>
                 </div>
 
                 <!-- Team Member 2 -->
-                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200" data-team="2">
                     <div class="team-image">
                         <div class="team-placeholder">
                             <i class="fas fa-user"></i>
@@ -520,11 +521,12 @@
                         <h3>Aditya Kaushik</h3>
                         <p class="team-role">Founding Member</p>
                         <p class="team-bio">PhD candidate at IIFT with MBA from FMS Delhi. Delivered consulting projects for Flipkart, Paytm, Adobe, and TVS, specializing in strategy, operations, and organizational efficiency.</p>
+                        <p class="team-read-more"><i class="fas fa-chevron-right"></i> Read Full Bio</p>
                     </div>
                 </div>
 
                 <!-- Team Member 3 -->
-                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300" data-team="3">
                     <div class="team-image">
                         <div class="team-placeholder">
                             <i class="fas fa-user"></i>
@@ -534,11 +536,12 @@
                         <h3>Vedant G.</h3>
                         <p class="team-role">M&A Advisor</p>
                         <p class="team-bio">Growth equity and investment banking professional with $150M+ transaction exposure. Board Observer for multiple portfolio companies, specializing in valuation, financial modeling, and deal execution.</p>
+                        <p class="team-read-more"><i class="fas fa-chevron-right"></i> Read Full Bio</p>
                     </div>
                 </div>
 
                 <!-- Team Member 4 -->
-                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400" data-team="4">
                     <div class="team-image">
                         <div class="team-placeholder">
                             <i class="fas fa-user"></i>
@@ -548,6 +551,7 @@
                         <h3>Naman J.</h3>
                         <p class="team-role">Senior Associate</p>
                         <p class="team-bio">4.5+ years in finance spanning financial analysis and investment banking. Contributed to 40+ transactions across healthcare, QSR, and infrastructure sectors at a boutique investment bank.</p>
+                        <p class="team-read-more"><i class="fas fa-chevron-right"></i> Read Full Bio</p>
                     </div>
                 </div>
             </div>
@@ -564,7 +568,7 @@
             </div>
             <div class="advisory-grid">
                 <!-- Advisor 1 -->
-                <div class="advisory-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="advisory-card" data-aos="fade-up" data-aos-delay="100" data-advisor="1">
                     <div class="advisory-image">
                         <div class="advisory-placeholder">
                             <i class="fas fa-user-tie"></i>
@@ -574,11 +578,33 @@
                         <h3>Akhil Jain</h3>
                         <p class="advisory-role">Advisory Board Member</p>
                         <p class="advisory-bio">Chartered Accountant with 25+ years in corporate finance and capital markets. Currently CIO at SKN Haryana City Gas Distribution. Raised over $500M with expertise spanning Fortis, Temasek, JP Morgan, and GIC.</p>
+                        <p class="team-read-more"><i class="fas fa-chevron-right"></i> Read Full Bio</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Team Member Modal Overlay -->
+    <div id="teamModal" class="team-modal">
+        <div class="team-modal-content">
+            <button class="team-modal-close" id="closeTeamModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="team-modal-header">
+                <div class="team-modal-icon" id="teamModalIcon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 id="teamModalName">Team Member Name</h3>
+                <p class="team-modal-role" id="teamModalRole">Role</p>
+            </div>
+            <div class="team-modal-body">
+                <div class="team-modal-bio" id="teamModalBio">
+                    <p>Full biography will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
