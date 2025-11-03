@@ -131,7 +131,7 @@ if (statsSection) {
 }
 
 // ===========================
-// Focus Sectors Horizontal Scroll Navigation
+// Focus Sectors Horizontal Scroll Navigation (Circular)
 // ===========================
 const sectorsGrid = document.getElementById('sectorsGrid');
 const sectorsScrollLeftBtn = document.getElementById('sectorsScrollLeft');
@@ -141,40 +141,74 @@ if (sectorsScrollLeftBtn && sectorsScrollRightBtn && sectorsGrid) {
     const scrollAmount = 350;
 
     sectorsScrollLeftBtn.addEventListener('click', () => {
-        sectorsGrid.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
+        if (sectorsGrid.scrollLeft <= 0) {
+            // Wrap to end
+            sectorsGrid.scrollTo({
+                left: sectorsGrid.scrollWidth - sectorsGrid.clientWidth,
+                behavior: 'smooth'
+            });
+        } else {
+            sectorsGrid.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     });
 
     sectorsScrollRightBtn.addEventListener('click', () => {
-        sectorsGrid.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
+        if (sectorsGrid.scrollLeft + sectorsGrid.clientWidth >= sectorsGrid.scrollWidth - 10) {
+            // Wrap to beginning
+            sectorsGrid.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            sectorsGrid.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     });
 }
 
 // ===========================
-// Partners Horizontal Scroll
+// Partners Horizontal Scroll (Circular)
 // ===========================
 const partnersScrollLeftBtn = document.getElementById('partnersScrollLeft');
 const partnersScrollRightBtn = document.getElementById('partnersScrollRight');
 const partnersGrid = document.getElementById('partnersGrid');
 
 if (partnersScrollLeftBtn && partnersScrollRightBtn && partnersGrid) {
+    const scrollAmount = 350;
+
     partnersScrollLeftBtn.addEventListener('click', () => {
-        partnersGrid.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
+        if (partnersGrid.scrollLeft <= 0) {
+            // Wrap to end
+            partnersGrid.scrollTo({
+                left: partnersGrid.scrollWidth - partnersGrid.clientWidth,
+                behavior: 'smooth'
+            });
+        } else {
+            partnersGrid.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     });
 
     partnersScrollRightBtn.addEventListener('click', () => {
-        partnersGrid.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
+        if (partnersGrid.scrollLeft + partnersGrid.clientWidth >= partnersGrid.scrollWidth - 10) {
+            // Wrap to beginning
+            partnersGrid.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            partnersGrid.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     });
 }
 
@@ -293,7 +327,7 @@ if (dealCountStat && dealsSection) {
 }
 
 // ===========================
-// Deals Horizontal Scroll Navigation
+// Deals Horizontal Scroll Navigation (Circular)
 // ===========================
 const dealsGrid = document.getElementById('dealsGrid');
 const scrollLeftBtn = document.getElementById('scrollLeft');
@@ -303,17 +337,33 @@ if (scrollLeftBtn && scrollRightBtn && dealsGrid) {
     const scrollAmount = 350;
 
     scrollLeftBtn.addEventListener('click', () => {
-        dealsGrid.scrollBy({
-            left: -scrollAmount,
-            behavior: 'smooth'
-        });
+        if (dealsGrid.scrollLeft <= 0) {
+            // Wrap to end
+            dealsGrid.scrollTo({
+                left: dealsGrid.scrollWidth - dealsGrid.clientWidth,
+                behavior: 'smooth'
+            });
+        } else {
+            dealsGrid.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     });
 
     scrollRightBtn.addEventListener('click', () => {
-        dealsGrid.scrollBy({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
+        if (dealsGrid.scrollLeft + dealsGrid.clientWidth >= dealsGrid.scrollWidth - 10) {
+            // Wrap to beginning
+            dealsGrid.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            dealsGrid.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
     });
 }
 
