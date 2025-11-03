@@ -456,7 +456,10 @@ img {
 }
 
 .deal-card {
-    min-width: 320px;
+    width: 350px;
+    min-width: 350px;
+    max-width: 350px;
+    height: 420px;
     background: linear-gradient(135deg, var(--dark-gray) 0%, var(--medium-gray) 100%);
     border-radius: 15px;
     overflow: hidden;
@@ -464,6 +467,8 @@ img {
     transition: var(--transition);
     cursor: pointer;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .deal-card:hover {
@@ -506,19 +511,20 @@ img {
 
 .deal-info {
     padding: 25px;
-    min-height: 200px;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .deal-info h4 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     margin-bottom: 15px;
     color: var(--white);
     font-weight: 600;
-    min-height: 52px;
+    min-height: 60px;
     display: flex;
     align-items: center;
+    line-height: 1.3;
 }
 
 .deal-category {
@@ -2025,7 +2031,10 @@ img {
     }
     
     .deal-card {
-        min-width: 280px;
+        width: 300px;
+        min-width: 300px;
+        max-width: 300px;
+        height: 400px;
     }
     
     .sector-card {
