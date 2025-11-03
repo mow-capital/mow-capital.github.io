@@ -304,60 +304,88 @@ const dealCards = document.querySelectorAll('.deal-card');
 // Deal data with descriptions
 const dealData = {
     1: {
-        title: 'Tech Merger Advisory',
-        category: 'Technology',
-        value: '$500M Transaction',
-        icon: 'fa-building',
-        description: `Advised on the strategic merger of two leading technology firms, combining their complementary product portfolios and market reach. The transaction created significant synergies in R&D and go-to-market capabilities, positioning the combined entity as a market leader in enterprise software solutions. Our team managed the entire deal lifecycle from valuation to regulatory approvals, ensuring a smooth integration process that preserved shareholder value.`
+        title: 'Persivia Recapitalization',
+        category: 'Healthcare',
+        value: '$107M Transaction',
+        icon: 'fa-heartbeat',
+        description: `Led the $107M recapitalization of Persivia, an AI-driven digital health solutions leader, in partnership with Aldrich Capital Partners. The investment is supporting Persivia's national expansion, growth of its sales force, and the launch of new AI healthcare solutions. The transaction enabled Persivia to strengthen its market position and deliver innovative population health management tools for over 200 hospitals and 12,000 clinicians nationwide.`
     },
     2: {
-        title: 'Banking Acquisition',
-        category: 'Finance',
-        value: '$1.2B Transaction',
-        icon: 'fa-university',
-        description: `Led the acquisition advisory for a regional banking institution expanding into new markets through strategic acquisition. The transaction involved comprehensive due diligence, regulatory compliance navigation, and integration planning across multiple jurisdictions. Our financial modeling and risk assessment frameworks enabled the client to achieve their expansion goals while maintaining capital adequacy ratios and regulatory compliance throughout the process.`
+        title: 'SpinSci Control Investment',
+        category: 'Technology/Healthcare',
+        value: '$53M Transaction',
+        icon: 'fa-laptop-medical',
+        description: `Advised on a $53M majority investment in SpinSci, a pioneer in AI-powered patient engagement and healthcare workflow automation. The investment is fueling SpinSci's expansion into new markets and accelerating development of its digital healthcare platform, which supports patient interactions and streamlines provider workflows for over 40 million patients annually. SpinSci's solutions include human-assisted contact centers and generative AI self-service tools for healthcare providers.`
     },
     3: {
-        title: 'Healthcare Network Consolidation',
+        title: 'Fortis Group Block Placement',
         category: 'Healthcare',
-        value: '$750M Transaction',
+        value: '₹800 Crore Transaction',
         icon: 'fa-hospital',
-        description: `Facilitated the consolidation of three regional healthcare networks to create economies of scale and improve patient care delivery. The transaction required careful navigation of complex regulatory requirements, physician employment agreements, and managed care contracts. Our healthcare specialists developed innovative solutions to preserve clinical autonomy while achieving operational efficiencies, resulting in improved financial performance and patient outcomes.`
+        description: `Advised on an ₹800 crore block placement for Fortis Healthcare, supporting the company's ambitious expansion plans. The transaction enabled Fortis to add over 400 beds to its Mohali campus, strengthen its market position, and enhance Punjab's role as a healthcare and medical tourism hub. The deal is expected to generate thousands of direct and indirect jobs and further accelerate Fortis' growth trajectory.`
     },
     4: {
-        title: 'Retail Chain Expansion',
-        category: 'Retail',
-        value: '$350M Transaction',
-        icon: 'fa-shopping-cart',
-        description: `Advised a national retail chain on its strategic expansion through acquisition of complementary retail assets in high-growth markets. The transaction included comprehensive market analysis, real estate portfolio optimization, and supply chain integration planning. Our retail experts identified significant cost synergies in procurement and distribution while preserving the acquired brand's customer loyalty and market positioning in key demographic segments.`
+        title: 'HCGDBL Structured Investment',
+        category: 'Green Energy',
+        value: '₹500 Crore Transaction',
+        icon: 'fa-leaf',
+        description: `Secured Hold of Terms (HoT) for a ₹500 crore structured investment for HCGDBL (Haryana City Gas Distribution), with contributions from Alpha Alternatives, JM Alternatives, and Standard Chartered Capital. The structure, based on Payment-In-Kind (PIK) terms, is powering the company's green energy initiatives and infrastructure growth.`
     },
     5: {
-        title: 'Manufacturing M&A',
-        category: 'Industrial',
-        value: '$900M Transaction',
-        icon: 'fa-industry',
-        description: `Orchestrated the merger of two manufacturing companies to create a vertically integrated industry leader with enhanced production capabilities and market access. The transaction involved complex operational due diligence, including plant assessments, supply chain analysis, and workforce integration planning. Our industrial team identified opportunities for operational excellence through lean manufacturing principles and technology investments that drove significant margin improvements.`
+        title: 'Jyoti Structures Preferential Issue',
+        category: 'Infrastructure',
+        value: '₹170 Crore Transaction',
+        icon: 'fa-building',
+        description: `Led the strategic advisory for a ₹170 crore preferential equity issue by Jyoti Structures Limited. The funds supported the company's growth initiatives, helping scale operations and improve capital structure in the competitive infrastructure sector.`
     },
     6: {
-        title: 'Private Equity Investment',
-        category: 'Finance',
-        value: '$600M Transaction',
-        icon: 'fa-chart-line',
-        description: `Advised a private equity firm on a platform investment in the business services sector, including buy-and-build strategy development and operational improvement initiatives. The transaction required sophisticated financial modeling, management assessment, and market positioning analysis. Our team developed a comprehensive value creation plan that identified multiple expansion opportunities and operational improvements, providing a clear roadmap to achieve target returns over the investment period.`
+        title: 'Sarveshwar Foods Preferential Issue',
+        category: 'Food & Agro',
+        value: '₹98 Crore Transaction',
+        icon: 'fa-seedling',
+        description: `Provided advisory for a ₹98 crore preferential equity issue for Sarveshwar Foods Limited (SFL), securing capital for business expansion and innovation across their food processing and organic foods business lines.`
     },
     7: {
-        title: 'SaaS Platform Acquisition',
-        category: 'Technology',
-        value: '$400M Transaction',
-        icon: 'fa-mobile-alt',
-        description: `Guided the acquisition of a high-growth SaaS platform by a strategic buyer seeking to expand its cloud-based product offerings. The transaction included detailed technology due diligence, customer contract analysis, and revenue model optimization. Our technology specialists evaluated the platform's scalability, security architecture, and competitive positioning to ensure alignment with the acquirer's strategic objectives and identified opportunities for cross-selling and product integration.`
+        title: 'Oriental Trimex Capital Raise',
+        category: 'Construction Materials',
+        value: '₹65 Crore Transaction',
+        icon: 'fa-hammer',
+        description: `Advised on both an ₹20 crore preferential equity issue and an ₹45 crore rights issue for Oriental Trimex Limited. These capital raises enabled the firm to finance new projects and strengthen its position in construction materials and marble solutions.`
     },
     8: {
-        title: 'Renewable Energy Investment',
-        category: 'Energy',
-        value: '$1.5B Transaction',
-        icon: 'fa-leaf',
-        description: `Structured and advised on a landmark renewable energy infrastructure investment involving solar and wind generation assets across multiple states. The transaction required expertise in project finance, power purchase agreements, and regulatory incentives at federal and state levels. Our energy team conducted comprehensive technical and commercial due diligence, negotiated favorable financing terms, and developed an asset management strategy to optimize long-term returns while supporting the client's sustainability objectives.`
+        title: 'OnePlan Solutions Investment',
+        category: 'Technology',
+        value: 'Growth Equity Investment',
+        icon: 'fa-chart-line',
+        description: `Advised on Aldrich Capital Partners' strategic investment in OnePlan Solutions, a leading provider of AI-enabled Strategic Portfolio and Work Management software. This partnership is propelling OnePlan's expansion into new markets, accelerating product development, and strengthening its global reach. The investment is helping organizations streamline planning, resource optimization, and financial forecasting, driving operational excellence and agility for enterprise clients.`
+    },
+    9: {
+        title: 'Compliancy Group Investment',
+        category: 'Healthcare IT',
+        value: 'Control Investment',
+        icon: 'fa-shield-alt',
+        description: `Aldrich Capital Partners invested in Compliancy Group, a prominent healthcare compliance and risk management SaaS provider. The deal supports the company's growth strategy, expansion of its digital compliance solutions, and enhanced service offerings for healthcare organizations nationwide. Compliancy Group's platform empowers clinics, hospitals, and service providers to navigate complex regulatory requirements with greater efficiency and accuracy.`
+    },
+    10: {
+        title: 'Zeteo Media Launch',
+        category: 'Media',
+        value: 'Advisory Project',
+        icon: 'fa-newspaper',
+        description: `Assisted with the successful launch of Zeteo, an independent digital media company founded by renowned journalist Mehdi Hasan. Built on a subscription model, Zeteo publishes interviews, podcasts, and editorial content across digital channels. The venture aims to deliver fearless, in-depth journalism and assemble a high-profile team of contributors from media, activism, and Hollywood.`
+    },
+    11: {
+        title: 'SME IPO Advisory',
+        category: 'Multiple Sectors',
+        value: 'Continental Seeds, AKG Exim, Buddha Global, Sirca Paints',
+        icon: 'fa-chart-pie',
+        description: `Guided Continental Seeds, AKG Exim Limited, Buddha Global Limited, and Sirca Paints Limited through successful SME IPO listings on NSE Emerge, supporting each company's transition to public markets and fueling growth across agriculture, trading, and specialty paints.`
+    },
+    12: {
+        title: 'Himalayan Bio Organic Foods IPO',
+        category: 'Agro',
+        value: 'IPO Advisory',
+        icon: 'fa-apple-alt',
+        description: `Handled the IPO for Himalayan Bio Organic Foods (a wholly owned subsidiary of SFL), enabling fresh capital infusion and market expansion in organic food products.`
     }
 };
 
