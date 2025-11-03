@@ -729,7 +729,7 @@ const teamData = {
     },
     2: {
         name: 'Aditya Kaushik',
-        role: 'Founding Member',
+        role: 'Sr Vice President of Asset Management and M&A',
         icon: 'fa-user',
         bio: `<p>Aditya is a graduate of Netaji Subhash Institute of Technology (now NSUT), specializing in Manufacturing Processes and Automation. He began his career as a Research Analyst in the patent department at Evalueserve, developing a strong analytical foundation before moving into management.</p>
         
