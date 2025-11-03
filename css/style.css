@@ -81,18 +81,15 @@ img {
 }
 
 .logo {
-    padding: 8px 15px;
-    background: linear-gradient(135deg, rgba(80, 200, 120, 0.1) 0%, rgba(80, 200, 120, 0.05) 100%);
-    border-radius: 12px;
-    border: 1px solid rgba(80, 200, 120, 0.2);
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
     transition: var(--transition);
 }
 
 .logo:hover {
-    background: linear-gradient(135deg, rgba(80, 200, 120, 0.15) 0%, rgba(80, 200, 120, 0.08) 100%);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-emerald);
-    border-color: var(--emerald);
 }
 
 .logo-img {
@@ -1014,8 +1011,10 @@ img {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .team-card {
@@ -1728,7 +1727,7 @@ img {
     }
 
     .logo {
-        padding: 6px 12px;
+        padding: 0;
     }
 
     .logo-img {
